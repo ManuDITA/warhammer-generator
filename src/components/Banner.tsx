@@ -68,6 +68,7 @@ function Banner(prop: any) {
 
     <div >
       <div className='rectangle' ref={divRef}>
+  
 
         <div className='score'>
           {match?.score == undefined && '. – .'}
