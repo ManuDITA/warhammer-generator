@@ -49,20 +49,28 @@ function BannerHandler() {
                 if (k > 0) {
                     if (row[12] != undefined) {
                         //match 1, code below
-                        const match: Match = new Match(row[2], row[9], row[10]=='A', row[12], row[6], row[11], row[13]  , 'RG', 'NOT PLAYED YET')
+
+                        const match: Match = new Match(row[2], row[9], row[10] == 'A', row[12], row[6], row[11], row[13], 'RG', 'NOT PLAYED YET', '')
                         newmatches.push(match)
 
                     }
                     if (row[17] != undefined) {
                         //match 2, code below
-                        const match: Match =new Match(row[2], row[14], row[15]=='A', row[17], row[6], row[16],  row[18], 'RG', 'NOT PLAYED YET')
+                        const match: Match = new Match(row[2], row[14], row[15] == 'A', row[17], row[6], row[16], row[18], 'RG', 'NOT PLAYED YET', '')
                         newmatches.push(match)
 
                     }
                     if (row[22] != undefined) {
                         //match 3, code below
-                        const match: Match = new Match(row[2], row[19], row[20]=='A', row[22], row[6], row[21], row[23], 'UTG', 'NOT PLAYED YET')
-                        newmatches.push(match)
+
+                        if (k < jsonData.length / 2) {
+                            const match: Match = new Match(row[2], row[19], row[20] == 'A', row[22], row[6], row[21], row[23], 'UTG', 'NOT PLAYED YET', row[19])
+                            newmatches.push(match)
+                        } else {
+                            const match: Match = new Match(row[2], row[19], row[20] == 'A', row[22], row[6], row[21], row[23], 'UTG', 'NOT PLAYED YET', row[2])
+                            newmatches.push(match)
+                        }
+
                     }
 
                 }
@@ -87,8 +95,8 @@ function BannerHandler() {
             {matches.map((m) => (
                 //@ts-ignore
 
-               
-                <Banner prop = {m}></Banner>
+
+                <Banner prop={m}></Banner>
             ))}
         </div>
 

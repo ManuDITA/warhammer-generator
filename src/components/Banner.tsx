@@ -50,7 +50,7 @@ function Banner(prop: any) {
       .then(function (dataUrl) {
         // Create a link element to trigger the download
         const link = document.createElement('a');
-        link.download = "imgPairing_" + match?.player1 + "-" +  match?.player2 + ".png"; // You can set a custom filename here
+        link.download = "imgPairing_" + match?.player1 + "-" + match?.player2 + ".png"; // You can set a custom filename here
         link.href = dataUrl;
         document.body.appendChild(link);
         link.click();
@@ -68,51 +68,68 @@ function Banner(prop: any) {
 
     <div >
       <div className='rectangle' ref={divRef}>
-  
+        <div className='innerRectangle'>
 
-        <div className='score'>
-          {match?.score == undefined && '. – .'}
-          {match?.score != undefined && match.score}
-        </div>
 
-        <div className='matchType'>
-          {match?.gameType} - {match?.gameCode}
-        </div>
-        <div className='statusPlayed'>
-          {match?.statusPlayed}
-        </div>
+          {match?.utgPlayer == match?.player1 && match?.attacker == true &&
+            <img src={process.env.PUBLIC_URL + 'Img_UTG_Logo.png'} className='utgIcon1'></img>
+          }
 
-        <div className='player1'>
+          {match?.utgPlayer == match?.player1 && match?.attacker == false &&
+            <img src={process.env.PUBLIC_URL + 'Img_UTG_Logo.png'} className='utgIcon2'></img>
+          }
+
+          {match?.utgPlayer == match?.player2 && match?.attacker == true &&
+            <img src={process.env.PUBLIC_URL + 'Img_UTG_Logo.png'} className='utgIcon2'></img>
+          }
+          {match?.utgPlayer == match?.player2 && match?.attacker == false &&
+            <img src={process.env.PUBLIC_URL + 'Img_UTG_Logo.png'} className='utgIcon1'></img>
+          }
+
+          <div className='score'>
+            {match?.score == undefined && '. – .'}
+            {match?.score != undefined && match.score}
+          </div>
+
+          <div className='matchType'>
+            {match?.gameType} - {match?.gameCode}
+          </div>
+          <div className='statusPlayed'>
+            {match?.statusPlayed}
+          </div>
+
+          <div className='player1'>
+            {match?.attacker == true &&
+              match?.player1}
+            {!match?.attacker == true &&
+              match?.player2}
+          </div>
+
+          <div className='player2'>
+            {match?.attacker == true &&
+              match?.player2}
+            {!match?.attacker == true &&
+              match?.player1}
+          </div>
+
           {match?.attacker == true &&
-            match?.player1}
-          {!match?.attacker == true &&
-            match?.player2}
-        </div>
-
-        <div className='player2'>
+            <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army1}.png`} className='player1Icon'></img>
+          }
           {match?.attacker == true &&
-            match?.player2}
-          {!match?.attacker == true &&
-            match?.player1}
+            <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army2}.png`} className='player2Icon'></img>
+          }
+
+          {match?.attacker == false &&
+            <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army1}.png`} className='player2Icon'></img>
+          }
+          {match?.attacker == false &&
+            <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army2}.png`} className='player1Icon'></img>
+          }
+
+          <img src={battle1} className='iconBattle1'></img>
+          <img src={battle2} className='iconBattle2'></img>
+
         </div>
-
-        {match?.attacker == true &&
-          <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army1}.png`} className='player1Icon'></img>
-        }
-        {match?.attacker == true &&
-          <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army2}.png`} className='player2Icon'></img>
-        }
-
-        {match?.attacker == false &&
-          <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army1}.png`} className='player2Icon'></img>
-        }
-        {match?.attacker == false &&
-          <img src={process.env.PUBLIC_URL + '/factions/' + `${match?.army2}.png`} className='player1Icon'></img>
-        }
-
-        <img src={battle1} className='iconBattle1'></img>
-        <img src={battle2} className='iconBattle2'></img>
-
 
       </div>
 
