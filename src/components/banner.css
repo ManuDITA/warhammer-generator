@@ -1,0 +1,125 @@
+.rectangle {
+  height: 8.36cm;
+  width: 20.44cm;
+  background-color: white;
+  border-radius: 40px;
+  position: relative;
+  display: flex;
+  margin: 0.93cm;
+  box-shadow: 3pt 3pt 4px rgba(0, 0, 0, 0.6);;
+}
+
+.matchType {
+  position: absolute;
+  left: 4%;
+  top: 3%;
+  color: #2E4555;
+  overflow: visible;
+  border-radius: 60px 0px 0px 0px;
+  width: 40%;
+  height: 20%;
+  font-family: Arial Black, Helvetica, sans-serif;
+  font-size: 30pt;
+  text-align: left;
+  vertical-align: middle;
+
+}
+
+.statusPlayed {
+
+  padding-top: 10px;
+  background-color: #2E4555;
+  color: white;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  overflow: hidden;
+  border-radius: 0px 40px 0px 0px;
+  width: 11.84cm;
+  height: 2.19cm;
+  font-family: Arial Black, Helvetica, sans-serif;
+  font-size: 32pt;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.score {
+  font-family: Arial Black, Helvetica, sans-serif;
+  color: #2E4555;
+  font-size: 80pt;
+  display: flex;
+  /* Use Flexbox for the centered element container */
+  justify-content: center;
+  /* Center the child elements horizontally */
+  align-items: center;
+  /* Center the child elements vertically */
+  /* Add any other styles you want for the centered element container */
+  flex: 1;
+}
+
+.player1Icon {
+  display: flex;
+  max-width: 40%;
+  max-height: 40%;
+  width: auto;
+  height: auto;
+
+  position: absolute;
+  left: 2%;
+  bottom: 30%;
+
+}
+
+.player2Icon {
+
+  display: inline;
+  max-width: 40%;
+  max-height: 40%;
+  width: auto;
+  height: auto;
+
+  position: absolute;
+  right: 2%;
+  bottom: 30%;
+
+}
+
+
+.iconBattle1 {
+  position: absolute;
+  left: 1%;
+  bottom: 5%;
+
+  height: 1.76cm;
+  width: 1.73cm;
+
+}
+
+.iconBattle2 {
+
+  height: 1.76cm;
+  width: 1.73cm;
+  position: absolute;
+  right: 1%;
+  bottom: 5%;
+}
+
+.player1 {
+
+  position: absolute;
+  font-family: Arial Black, Helvetica, sans-serif;
+  color: #2E4555;
+  font-size: 30pt;
+  left: 10%;
+  bottom: 7%;
+}
+
+.player2 {
+
+  position: absolute;
+  font-family: Arial Black, Helvetica, sans-serif;
+  color: #2E4555;
+  font-size: 30pt;
+  right: 10%;
+  bottom: 7%;
+}
