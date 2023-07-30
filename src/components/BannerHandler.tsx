@@ -50,13 +50,14 @@ function BannerHandler() {
                     if (row[12] != undefined) {
                         //match 1, code below
 
-                        const match: Match = new Match(row[2], row[9], row[10] == 'A', row[12], row[6], row[11], row[13], 'RG', 'NOT PLAYED YET', '')
+                        const match: Match = new Match(row[2], row[9], row[10] == 'A', row[12], row[6], row[11], row[13], 'RG', row[27], '')
                         newmatches.push(match)
 
                     }
                     if (row[17] != undefined) {
                         //match 2, code below
-                        const match: Match = new Match(row[2], row[14], row[15] == 'A', row[17], row[6], row[16], row[18], 'RG', 'NOT PLAYED YET', '')
+
+                        const match: Match = new Match(row[2], row[14], row[15] == 'A', row[17], row[7], row[16], row[18], 'RG', row[28], '')
                         newmatches.push(match)
 
                     }
@@ -64,10 +65,10 @@ function BannerHandler() {
                         //match 3, code below
 
                         if (k < jsonData.length / 2) {
-                            const match: Match = new Match(row[2], row[19], row[20] == 'A', row[22], row[6], row[21], row[23], 'UTG', 'NOT PLAYED YET', row[19])
+                            const match: Match = new Match(row[2], row[19], row[20] == 'A', row[22], row[8], row[21], row[23], 'UTG', row[29], row[19])
                             newmatches.push(match)
                         } else {
-                            const match: Match = new Match(row[2], row[19], row[20] == 'A', row[22], row[6], row[21], row[23], 'UTG', 'NOT PLAYED YET', row[2])
+                            const match: Match = new Match(row[2], row[19], row[20] == 'A', row[22], row[8], row[21], row[23], 'UTG', row[29], row[2])
                             newmatches.push(match)
                         }
 

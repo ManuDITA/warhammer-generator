@@ -50,6 +50,8 @@
 }
 
 .score {
+  
+  z-index: 0;
   font-family: Arial Black, Helvetica, sans-serif;
   color: #2E4555;
   font-size: 80pt;
