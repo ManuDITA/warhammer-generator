@@ -71,10 +71,10 @@ function Banner(prop: any) {
   return (
 
     <div >
-      {match?.score == undefined &&
+      {/*match?.score == undefined &&
         <></>
-      }
-      {match?.score != undefined &&
+  */}
+      {match?.score == undefined &&
 
         <div className='rectangle' ref={divRef}>
           <div className='innerRectangle'>

@@ -37,7 +37,7 @@ function BannerHandler() {
             // Get sheet names from the workbook
 
             // Access data from the first sheet (assuming it's the first one)
-            const firstSheetName = "Session1";
+            const firstSheetName = "Current_Session";
             const worksheet = workbook.Sheets[firstSheetName];
             const jsonData = utils.sheet_to_json(worksheet, { header: 1 });
 
