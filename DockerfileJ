@@ -1,8 +1,17 @@
 FROM jenkins/jenkins:2.414.2-jdk17
 USER root
-RUN apt-get update && apt-get install -y lsb-release
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y lsb-release && \
+    apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
+    apt-get install -y nodejs \
+    npm
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
   https://download.docker.com/linux/debian/gpg
+                 
+# Add npm to the PATH
+ENV PATH="${PATH}:/usr/bin"
+
 RUN echo "deb [arch=$(dpkg --print-architecture) \
   signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
   https://download.docker.com/linux/debian \
