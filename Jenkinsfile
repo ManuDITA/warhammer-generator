@@ -16,11 +16,13 @@ pipeline {
                 sh 'npm run build --force'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Test'
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'SonarScanner';
+            withSonarQubeEnv() {
+                sh "${scannerHome}/bin/sonar-scanner"
             }
         }
+        
         stage('Deploy') {
             steps {
                 echo 'Deploy'
