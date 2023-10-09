@@ -12,8 +12,8 @@ pipeline {
                 echo "Wewe"
                 echo "Build id of this job is: ${BUILD_ID}" 
                 echo "Build url of this job is: ${BUILD_URL}" 
-                //sh 'npm install --force'
-                //sh 'npm run build --force'
+                sh 'npm install --force'
+                sh 'npm run build --force'
             }
         }
         stage('SonarQube Analysis') {
